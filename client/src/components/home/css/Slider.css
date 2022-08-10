@@ -1,0 +1,125 @@
+
+/* Slider */
+#slider {
+    width: 1200px;
+    height: 383px;
+    margin: auto;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 820px 370px;
+    border: 1px #999;
+    margin-bottom: 15px;
+  }
+  
+  
+  /* Slideshow container */
+  .slideshow-all {
+    max-width: 820px;
+    width: 815px;
+    box-shadow: 0px 5px 10px #999;
+  }
+  .slideshow-container {
+    max-width: 820px;
+    max-height: 318px;
+    position: relative;
+    margin-bottom: 5px;
+  }
+  /* Ẩn các slider */
+  .mySlides {
+    display: none;
+  }
+  .fade:not(.show) {
+    opacity: 100%;
+  }
+  
+  /* định dạng các chấm chuyển đổi các slide */
+  .dot {
+    cursor: pointer;
+    width: 163px;
+    line-height: 1.3em;
+    background-color: var(--light-color);
+    float: left;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 7px 5px 0px 5px;
+    text-align: center;
+    min-height: 60px;
+  }
+  
+  .khung-images {
+    width: 380px;
+    height: 383px;
+    float: right;
+  }
+  .images {
+    width: 380px;
+    height: 182px;
+    margin-bottom: 5px;
+  }
+  
+  .noiBat {
+    width: 380px;
+    height: 196px;
+    background-color: var(--light-color);
+    box-shadow: 0px 5px 10px #999;
+  }
+  .hot {
+    height: 35px;
+    padding-top: 5px;
+    padding-left: 5px;
+    text-transform: uppercase;
+    color: #cf4e5e;
+    font-weight: 600;
+    border-bottom: 2px solid #c21d32;
+  }
+  .tin {
+    height: 75px;
+    margin-top: 5px;
+  }
+  .anhNho {
+    width: 125px;
+    padding-top: 10px;
+    padding-left: 10px;
+    float: left;
+    text-align: center;
+  }
+  
+  .anhNho img {
+    border-radius: 3px;
+  }
+  .noiDung {
+    width: 220px;
+    float: right;
+    font-size: 12px;
+    padding-top: 10px;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 600;
+    padding-right: 15px;
+  }
+  
+  .noiDung:hover {
+    color: #e35a75;
+  }
+  /* khi được hover, active đổi màu nền */
+  .active,
+  .dot:hover {
+    background-color: #f2f2f2;
+    border-top: 2px solid #c21d32;
+    font-weight: 600;
+  }
+  
+  /* Thêm hiệu ứng khi chuyển đổi các slide */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 3s;
+    animation-name: fade;
+    animation-duration: 3s;
+  }
+  
+  .khung-pr {
+    width: 1200px;
+    max-height: 75px;
+    margin: auto;
+    box-shadow: 0px 5px 10px #999;
+  }

@@ -1,0 +1,39 @@
+.up-down {
+    width: 25px;
+    height: 25px;
+    line-height: 0px !important;
+    padding: 0px !important;
+    color: #000 !important;
+    box-shadow: none !important;
+}
+
+.up-down:hover {
+    background-color: #fff !important;
+    color: #000 !important
+}
+
+.up-down:focus {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+.price-number {
+    padding: 10px 15px 0 0;
+    color: #E10C00;
+    font-weight: 400;
+}
+
+.price-total {
+    color: #E10C00;
+    font-weight: 500;
+}
+
+.remove-product {
+    position: absolute;
+    top: -5px;
+    right: 2px;
+}
+
+.remove-product i {
+    color: #000;
+}

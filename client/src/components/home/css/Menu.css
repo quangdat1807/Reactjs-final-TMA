@@ -1,0 +1,192 @@
+#nav-bar {
+  background-color: var(--primary-color);
+  height: 66px !important;
+}
+
+.menu-lv1 {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.item-lv1 {
+  padding: 10px 14px;
+  line-height: 30px !important;
+  font-weight: 500;
+}
+
+.item-lv1 i {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.item-lv1 i:hover {
+  color: yellow;
+}
+
+.item-lv1 a,
+i {
+  color: var(--light-color);
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.item-lv1-title {
+  letter-spacing: -1px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.colors.sub-a:hover a {
+  color: yellow;
+  text-decoration: none;
+}
+
+.item-lv1-title::before {
+  line-height: 1.2 !important;
+  font-family: "FontAwesome";
+  display: block !important;
+  font-size: 16px !important;
+  text-align: center !important;
+}
+
+.item-lv1-title:hover {
+  text-decoration: none;
+}
+
+#phone::before {
+  content: "\f3cd";
+}
+
+#laptop::before {
+  content: "\f109";
+}
+
+#tablet::before {
+  content: "\f3fa";
+}
+
+#macbook::before {
+  content: "\f109";
+}
+
+#phuKien::before {
+  content: "\f58f";
+}
+
+#hoTro::before {
+  content: "\f059";
+}
+
+#cart::before {
+  content: "\f07a";
+  font-size: 20px !important;
+  padding-top: 10px;
+}
+
+#admin::before {
+  content: "\f7d9";
+}
+
+.item-lv1:hover .menu-lv2 {
+  display: block;
+}
+
+/* .item-lv1:last-child {
+  margin-left: auto;
+} */
+
+.menu-lv2 {
+  border: 1px solid #ddd;
+  background-color: var(--light-color);
+  position: absolute;
+  top: 55px;
+  display: none;
+  z-index: 5;
+}
+
+.menu-lv2 a {
+  color: var(--dark-color);
+}
+
+.menu-lv2 .item-lv2 {
+  padding: 10px 20px;
+  max-width: 300px;
+}
+
+.item-group {
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+}
+
+.item-group:hover {
+  text-decoration: none;
+  color: #c21d32;
+}
+
+.menu-lv2 .item-lv2:hover {
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.logo {
+  width: 130px;
+  margin-right: 40px;
+  padding-top: 10px;
+}
+
+#search {
+  width: 190px;
+  border-radius: 3px;
+  line-height: 30px;
+}
+
+.box {
+  width: 250px;
+  padding-top: 14px;
+}
+
+input {
+  border: 0;
+}
+
+button {
+  border: 0;
+}
+
+.icon {
+  width: 45px;
+  line-height: 30px;
+  border-radius: 3px;
+  background-color: var(--light-color);
+}
+
+.fa-search {
+  color: black !important;
+}
+
+.name-user {
+  color: #fff;
+  padding: 10px;
+}
+
+.icon-price {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.cart {
+  margin-left: auto;
+}
+
+.cartCount {
+  position: absolute;
+  right: 5px;
+  top: 8px;
+  font-size: 16px;
+}
+
+.list-search {
+  position: absolute;
+  top: 40px;
+}

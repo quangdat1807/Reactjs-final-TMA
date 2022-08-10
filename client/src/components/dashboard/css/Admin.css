@@ -1,0 +1,36 @@
+.table {
+    background-color: #fff;
+}
+
+
+.button-one {
+    max-width: 100px;
+    padding-left: 20px;
+    margin-top: 30px;
+}
+
+td .button-one{
+    background-color: #fff;
+    
+}
+
+.button-one i {
+    color: crimson;
+    font-size: 15px;
+}
+
+.btnAdd {
+    color: black;
+    width: 100px;
+}
+
+.table tr {
+    text-align: center;
+}
+.table td {
+    vertical-align: middle;
+}
+
+.description {
+    max-width: 250px;
+}
