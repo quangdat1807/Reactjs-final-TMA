@@ -3,8 +3,6 @@ import { UncontrolledPopover, Input } from 'reactstrap';
 import { Link } from "react-router-dom";
 import { Context } from '../../contexts/Context';
 import CurrencyFormat from 'react-currency-format';
-import { logo } from '../../image/logo.png'
-
 
 import "../home/css/Menu.css"
 function Menu() {
@@ -19,7 +17,7 @@ function Menu() {
     if (getUser === "admin") {
         adminUser.push(
             <div key={getUser} className="colors sub-a object">
-                <Link to="/admin/products/1" className="item-lv1-title" id="admin">Admin</Link>
+                <Link to="/admin/dashboard" className="item-lv1-title" id="admin">Admin</Link>
             </div>
         )
     }
@@ -37,7 +35,7 @@ function Menu() {
         <>
             <nav id="nav-bar">
                 <ul className="menu-lv1">
-                    <div className="logo">
+                    <div className="logoHome">
                         <Link to="/">
                             <img src="https://clickbuy.com.vn/clickbuy.png" alt="" />
                         </Link>
@@ -120,7 +118,7 @@ function Menu() {
 
                     <li className="item-lv1">
                         <span className="name-user">{getUser}</span>
-                        <i onClick={clearLogin} className="fas fa-sign-out-alt"></i>
+                        <i onClick={clearLogin} className="fas fa-sign-out-alt" style={{color: '#fff'}}></i>
                     </li>
 
                 </ul>

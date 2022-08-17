@@ -15,7 +15,7 @@ export const DataProvider = ({ children }) => {
 
     useEffect(() => {
         const ListProduct = async () => {
-            await axios("http://localhost:8080")
+            await axios.get("http://localhost:8080")
                 .then(result => {
                     setProducts(result.data);
                 },
@@ -27,7 +27,7 @@ export const DataProvider = ({ children }) => {
         ListProduct()
 
         const ListCategory = async () => {
-            await axios('http://localhost:8080/category')
+            await axios.get('http://localhost:8080/category')
                 .then(result => {
                     setCategory(result.data);
                 },

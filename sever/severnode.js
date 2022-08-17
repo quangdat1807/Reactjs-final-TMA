@@ -86,11 +86,11 @@ app.get('/countproducts', function (req, res) {
 // --------------------delete-----------------
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.get('/api/product/:id', function (req, res) {
+app.delete('/api/product/:id', function (req, res) {
 
   var id = req.params.id;
-
-  var sql = "DELETE FROM `products` WHERE id = " + id;
+  console.log(id)
+  let sql = "DELETE FROM `products` WHERE id = " + id;
 
   con.query(sql, function (err, result, fields) {
     if (err) throw err;
@@ -106,7 +106,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.post('/api/product', function (req, res) {
   console.log(req.body)
-  var sql = "INSERT INTO `products`(`name`, `image`, `price`, `idcategory`, `description`) VALUES ('" + req.body.name + "','" + req.body.image + "','" + req.body.price + "','" + req.body.idcategory + "','" + req.body.description + "')"
+  var sql = "INSERT INTO `products`(`name`, `image`, `price`, `idcategory`, `quantity`, `description`) VALUES ('" + req.body.name + "','" + req.body.image + "','" + req.body.price + "','" + req.body.idcategory + "','" + 1 + "', '" + req.body.description + "')"
   con.query(sql, function (err, result, fields) {
     if (err) throw err;
     console.log("2" + result);
@@ -124,7 +124,7 @@ app.put('/api/product/:id', function (req, res) {
   console.log(req.body)
   var id = req.params.id;
   var sql = "UPDATE `products` SET `name`='" + req.body.name + "',`image`='" + req.body.image + "',`price`='" + req.body.price + "',`idcategory`='" + req.body.idcategory + "',`description`='" + req.body.description + "' WHERE id =" + id;
-  con.query(sql, function (err, result, fields) {
+  con.query(sql, function (err, result) {
     if (err) throw err;
     console.log("a " + result, id);
     res.header("Access-Control-Allow-Origin", "*");
@@ -138,11 +138,11 @@ app.put('/api/product/:id', function (req, res) {
 app.get('/category', function (req, res) {
 
   var sql = "SELECT * FROM category";
-  con.query(sql, function (err, result, fields) {
+  con.query(sql, function (err, result) {
     if (err) throw err;
     //console.log(result);
     res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,      Accept");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.send(result);
   });
 })
@@ -158,15 +158,16 @@ app.post("/checkout", function (req, res) {
   }
 
   let valid = true
+
   for (let i = 0; i < products.length; i++) {
     let productId = products[i].id;
-
+    console.log("1", productId)
     //check db
-    let product = "SELECT * FROM `products` WHERE `id` = '" + productId + "'";
-    if (!product) {
-      valid = false
-      break;
-    }
+    let product = "SELECT * FROM `products` where `id` = '" + productId + "'";
+    con.query(product, function (err, result) {
+
+    });
+    !product ? valid = false : valid = true;
   }
 
   if (!valid) {

@@ -84,7 +84,7 @@ const DetailPro = () => {
                                         </div>
                                         <div className="product-price">
                                             <CurrencyFormat value={item.price} displayType={'text'} thousandSeparator={true} suffix={'₫'} renderText={value =>
-                                                <span className='icon-price'>{value}</span>} />
+                                                <span className='icon-price' style={{color: '#e10c00'}}>{value}</span>} />
                                         </div>
                                         <a href="#">Bảo hành 12 tháng tại trung tâm ủy quyền chính hãng</a>
                                     </div>

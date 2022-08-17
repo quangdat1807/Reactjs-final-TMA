@@ -24,27 +24,13 @@ function Add() {
 
 
     const onSubmit = (data) => {
-        console.log(data);
-        var config = {
-            method: "post",
-            url: "http://localhost:8080/api/product",
-            data: data
-        };
-        axios(config)
+        axios.post("http://localhost:8080/api/product", data)
             .then(function (response) {
-                console.log(response);
-
-                window.location.assign('http://localhost:3000/admin/products/1');
-                if (response.data == "Thành Công") {
-
-                }
-
-
+                // window.location.assign('http://localhost:3000/admin/products/1');
             })
             .catch(function (error) {
                 console.log(error);
             });
-        console.log(data)
     }
     return (
         <div className="col-md-4" style={{margin: "auto"}}>

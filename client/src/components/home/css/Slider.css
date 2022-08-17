@@ -102,12 +102,12 @@
     color: #e35a75;
   }
   /* khi được hover, active đổi màu nền */
-  .active,
+  /* .active,
   .dot:hover {
     background-color: #f2f2f2;
     border-top: 2px solid #c21d32;
     font-weight: 600;
-  }
+  } */
   
   /* Thêm hiệu ứng khi chuyển đổi các slide */
   .fade {

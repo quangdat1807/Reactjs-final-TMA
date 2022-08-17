@@ -6,7 +6,15 @@
 .button-one {
     max-width: 100px;
     padding-left: 20px;
-    margin-top: 30px;
+}
+
+/* .btn:hover {
+    background-color: #F0F0F0 !important;
+    color: #0b5ed7 !important;
+} */
+
+.btn-primary {
+    border-color: #fff !important;
 }
 
 td .button-one{
@@ -33,4 +41,8 @@ td .button-one{
 
 .description {
     max-width: 250px;
+}
+
+.modal-backdrop.show {
+    opacity: 0.1 !important;
 }

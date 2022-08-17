@@ -11,33 +11,26 @@ function Edit() {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     let { id } = useParams();
-    console.log(id)
 
     const [data, setData] = useState([]);
     const [category, setCategory] = useState([]);
-    const [product, setProduct] = useState([]);
 
-    const onSubmit = data => {
+    const onSubmit = async data => {
         console.log(data)
-        var config = {
-            method: "put",
-            url: "http://localhost:8080/api/product/" + id,
-            data: data
-        };
-        console.log(data)
-        axios(config)
+        await axios.put("http://localhost:8080/api/product/" + id, data)
             .then(function () {
                 toast.success('Sửa thành công!')
             })
-            .then(
-                (result) => {
-                    setProduct(result)
+            .then(function () {
+                setTimeout(() => {
                     window.location.assign('http://localhost:3000/admin/products/1');
-                },
-                (error) => {
-                    console.log(error);
-                }
-            )
+                }, 1000);
+
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+
     }
 
     //  getdata category
@@ -45,13 +38,11 @@ function Edit() {
         const fetchData = async () => {
             await axios.get("http://localhost:8080/category")
                 .then(result => {
-                    console.log(result);
                     setCategory(result.data);
-                },
-                    (error) => {
-                        console.log(error);
-                    }
-                )
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
         };
         fetchData();
 
@@ -59,14 +50,11 @@ function Edit() {
         const dataForm = async () => {
             await axios.get("http://localhost:8080/detail/" + id)
                 .then(result => {
-                    console.log(result.data);
                     setData(result.data);
-
-                },
-                    (error) => {
-                        console.log(error);
-                    }
-                )
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
         };
         dataForm();
     }, []);
@@ -93,12 +81,13 @@ function Edit() {
     }
 
 
-    var items = [];
-    for (var i = 0; i < category.length; i++) {
-        items.push(
-            <option value={category[i].idcategory}>{category[i].name}</option>
-        );
-    }
+    // var items = [];
+    // for (var i = 0; i < category.length; i++) {
+    //     items.push(
+    //         <option value={category[i].idcategory}>{category[i].name}</option>
+    //     );
+    // }
+
 
     return (
         <div>

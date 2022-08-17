@@ -6,10 +6,6 @@ import { Context } from '../../contexts/Context'
 import { Link } from "react-router-dom";
 import CurrencyFormat from 'react-currency-format';
 import { useForm } from 'react-hook-form';
-import {
-  Button, Modal, ModalFooter,
-  ModalHeader, ModalBody
-} from "reactstrap"
 import axios from 'axios';
 import useLocationForm from "./useLocationForm";
 import moment from "moment";
@@ -68,6 +64,7 @@ export const CheckOut = () => {
       data.created_Date = moment().format("YYYY-MM-DD hh:mm:ss")
 
       const postData = async () => {
+        console.log(data)
         await axios.post("http://localhost:8080/checkout", {
           contact: data,
           products: product
@@ -75,7 +72,7 @@ export const CheckOut = () => {
           .then(result => {
             localStorage.removeItem('dataCart')
             alert('Đặt hàng thành công')
-            window.location.assign('/products/1')
+            window.location.assign('/')
           })
           .catch((error) => {
             console.log(error);
@@ -115,11 +112,11 @@ export const CheckOut = () => {
               <i className="bi bi-chevron-left" style={{ fontSize: '25px', color: 'black' }}></i>
               <strong className="text-muted">Quay lại</strong></Link>
           </div>
-          <div className="row" onSubmit={handleSubmit(onSubmit)}>
+          <div className="row" onSubmit={handleSubmit(onSubmit)} style={{marginBottom: '30px'}}>
             <div className="col-md-4 order-md-3 mb-4">
               <h4 className="d-flex justify-content-between align-items-center mb-3">
                 <span className="text-muted">Giỏ hàng</span>
-                <span className="badge badge-secondary badge-pill" style={{ fontSize: "20px", color: "black" }}>{cart.length}</span>
+                <span className="badge badge-secondary badge-pill" style={{ fontSize: "20px", color: "#fff" }}>{cart.length}</span>
               </h4>
 
               <ul className="list-group mb-3 sticky-top">
@@ -208,14 +205,14 @@ export const CheckOut = () => {
                 <div className="mb-3">
                   <input type="email" className="form-control" id="email" placeholder="Email" {...register("email")} />
                 </div>
-                <hr className="mb-4" />
+                <hr className="mb-3" />
                 <div className="row">
                   <div className="col-md-12 mb-6">
                     <textarea className="col-md-12" placeholder=" Ghi chú" {...register("description")} ></textarea>
                   </div>
                 </div>
-                <hr className="mb-4" />
-                <button className="btn btn-primary btn-lg btn-block" type="submit">Đặt hàng</button>
+                <hr className="mb-2" />
+                <button className="btn btn-primary btn-block" type="submit" style={{backgroundColor: '#0d6efd', color: '#f8f9fa'}}>Đặt hàng</button>
                 <Toaster reverseOrder={false}/>
               </form>
             </div>
