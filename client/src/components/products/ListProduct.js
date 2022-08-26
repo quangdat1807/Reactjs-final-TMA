@@ -49,7 +49,7 @@ function ListProduct() {
                 <div className="items">
                     <Link to={'/detailPro/' + data[i].id} >
                         <p><img src={data[i].image} className="App-logo" alt="logo" /></p>
-                        <h5>{data[i].name}</h5>
+                        <h6>{data[i].name}</h6>
                         <CurrencyFormat value={data[i].price} displayType={'text'} thousandSeparator={true} suffix={' ₫'} renderText={value =>
                             <p>{value}</p>} />
                     </Link>

@@ -1,11 +1,11 @@
 import Dashboard from "../src/views/Dashboard.js";
 import UserProfile from "../src/views/UserProfile.js";
-import TableList from "../src/views/TableList.js";
+import ListCheckout from "./views/ListCheckout.js";
 import Typography from "../src/views/Typography.js";
-import Icons from "../src/views/Icons.js";
 import Notifications from "../src/views/Notifications.js";
 import ProductAdmin from "./components/dashboard/ProductAdmin.js";
 import Add from "./components/dashboard/Add.js";
+import Edit from "./components/dashboard/Edit.js";
 
 const dashboardRoutes = [
   {
@@ -17,16 +17,23 @@ const dashboardRoutes = [
   },
   {
     path: "/products/:numberpage",
-    name: "List Product",
+    name: "Danh sách sản phẩm",
     icon: "nc-icon nc-circle-09",
     component: ProductAdmin,
     layout: "/admin"
   },
   {
     path: "/products/add",
-    name: "Add Product",
+    name: "Thêm sản phẩm",
     icon: "nc-icon nc-circle-09",
     component: Add,
+    layout: "/admin"
+  },
+  {
+    path: "/product/edit/:id",
+    name: "Sửa sản phẩm",
+    icon: "nc-icon nc-circle-09",
+    component: Edit,
     layout: "/admin"
   },
   {
@@ -37,10 +44,10 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/table",
-    name: "Table List",
+    path: "/listcheckout",
+    name: "Đơn đặt hàng",
     icon: "nc-icon nc-notes",
-    component: TableList,
+    component: ListCheckout,
     layout: "/admin"
   },
   {

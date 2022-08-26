@@ -84,14 +84,16 @@ const DetailPro = () => {
                                         </div>
                                         <div className="product-price">
                                             <CurrencyFormat value={item.price} displayType={'text'} thousandSeparator={true} suffix={'₫'} renderText={value =>
-                                                <span className='icon-price' style={{color: '#e10c00'}}>{value}</span>} />
+                                                <span className='icon-price' style={{ color: '#e10c00' }}>{value}</span>} />
                                         </div>
                                         <a href="#">Bảo hành 12 tháng tại trung tâm ủy quyền chính hãng</a>
                                     </div>
                                 </div>
-
-                                <button onClick={() => addCart(item.id)} className="cart-btn"><Link to={'/checkout'} style={{ color: 'white' }}>Mua ngay</Link></button>
-
+                                <Link to={'/checkout'} style={{ color: 'white' }}>
+                                    <button onClick={() => addCart(item.id)} className="cart-btn">
+                                        Mua ngay
+                                    </button>
+                                </Link>
                                 <button className="btn btn" style={{ margin: "10px" }} onClick={() => { addCart(item.id); handleSubmitAdd() }} disabled={event} >
                                     <AddShoppingCart />
                                 </button>
@@ -100,7 +102,8 @@ const DetailPro = () => {
                             </div>
                         </main >
                     );
-                })}
+                })
+                }
             </>
         )
     }

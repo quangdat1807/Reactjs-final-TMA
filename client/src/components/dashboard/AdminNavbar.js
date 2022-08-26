@@ -80,7 +80,7 @@ function Header() {
                 className="m-0"
               >
                 <i className="bi bi-bell-fill"></i>
-                <span className="notification">5</span>
+                <span className="notification">3</span>
                 <span className="d-lg-none ml-1">Notification</span>
               </Dropdown.Toggle>
               <Dropdown.Menu>
@@ -95,18 +95,6 @@ function Header() {
                   onClick={(e) => e.preventDefault()}
                 >
                   Notification 2
-                </Dropdown.Item>
-                <Dropdown.Item
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  Notification 3
-                </Dropdown.Item>
-                <Dropdown.Item
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  Notification 4
                 </Dropdown.Item>
                 <Dropdown.Item
                   href="#pablo"

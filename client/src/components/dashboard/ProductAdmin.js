@@ -131,7 +131,7 @@ function ProductAdmin() {
                                 <td className="description">{item.description}</td>
                                 <td>
                                     <button className="button-one">
-                                        <Link to={`/api/product/${item.id}`}>
+                                        <Link to={`/admin/product/edit/${item.id}`}>
                                             <i className="ic1 fas fa-edit"></i> </Link>
                                     </button>
                                     <Button className="button-one" onClick={() => showConfirm(item.id)} >

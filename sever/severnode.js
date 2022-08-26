@@ -200,6 +200,27 @@ app.post("/checkout", function (req, res) {
   }
 })
 
+// -------------get data checkout-------------
+app.get("/checkout", function (req, res) {
+  var sql = "SELECT * FROM `receipt`";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.send(result);
+  })
+})
+// -------------get data checkoutDetail-------------
+app.get("/checkoutDetail", function (req, res) {
+  var sql = "SELECT * FROM `receiptdetail`";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.send(result);
+  })
+})
+
 // -------------get products with category-------------
 app.get("/products/category/:id", function (req, res) {
   var sql = "SELECT * FROM `products` WHERE `idcategory` = '" + req.params.id + "'";

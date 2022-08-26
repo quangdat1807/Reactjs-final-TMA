@@ -69,9 +69,9 @@ export const CheckOut = () => {
           contact: data,
           products: product
         })
-          .then(result => {
+          .then(function () {
             localStorage.removeItem('dataCart')
-            alert('Đặt hàng thành công')
+            toast("Đặt hàng thành công")
             window.location.assign('/')
           })
           .catch((error) => {
@@ -116,7 +116,7 @@ export const CheckOut = () => {
             <div className="col-md-4 order-md-3 mb-4">
               <h4 className="d-flex justify-content-between align-items-center mb-3">
                 <span className="text-muted">Giỏ hàng</span>
-                <span className="badge badge-secondary badge-pill" style={{ fontSize: "20px", color: "#fff" }}>{cart.length}</span>
+                <span className="badge badge-secondary badge-pill" style={{ fontSize: "20px", color: "#6c757d" }}>{cart.length}</span>
               </h4>
 
               <ul className="list-group mb-3 sticky-top">
@@ -153,11 +153,11 @@ export const CheckOut = () => {
                 <div className="row">
 
                   <div className="col-md-6 mb-3">
-                    <input type="text" className="form-control" id="fullName" placeholder="Họ và tên*" required="" {...register("fullName", { required: true, minLength: 8, maxLength: 50 })} />
+                    <input type="text" className="form-control" id="fullName" placeholder="Họ và tên*" {...register("fullName", { required: true, minLength: 8, maxLength: 50 })} />
                     <strong style={{ color: 'red', fontWeight: '500', lineHeight: '10px', fontSize: '12px' }}>{errors.fullName && "Tên chưa đúng định dạng ( a-z, 8-50 ký tự)"}</strong>
                   </div>
                   <div className="col-md-6 mb-3">
-                    <input type="text" className="form-control" id="phoneNumber" placeholder="Số điện thoại*" required="" {...register("phoneNumber", { required: true, minLength: 10, maxLength: 11 })} />
+                    <input type="text" className="form-control" id="phoneNumber" placeholder="Số điện thoại*" {...register("phoneNumber", { required: true, minLength: 10, maxLength: 11, pattern: { value: /\d+/, message: "Phải nhập số", } })} />
                     <strong style={{ color: 'red', fontWeight: '500', lineHeight: '10px', fontSize: '12px' }}>{errors.phoneNumber && "Số điện thoại chưa đúng định dạng!"}</strong>
                   </div>
                 </div>
@@ -199,7 +199,7 @@ export const CheckOut = () => {
 
                 </div>
                 <div className="mb-3">
-                  <input type="text" className="form-control" id="address" placeholder="Địa chỉ nhận hàng*" required="" {...register("address", { required: true })} />
+                  <input type="text" className="form-control" id="address" placeholder="Địa chỉ nhận hàng*" {...register("address", { required: true })} />
                   <strong style={{ color: 'red', fontWeight: '500', lineHeight: '10px', fontSize: '12px' }}>{errors.address && "Vui lòng nhập địa chỉ!"}</strong>
                 </div>
                 <div className="mb-3">
@@ -225,7 +225,6 @@ export const CheckOut = () => {
   return (
     <>
       {isCart ? <CartData /> : <CartEmpty />}
-      <Footer />
     </>
   )
 

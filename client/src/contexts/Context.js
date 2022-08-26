@@ -48,7 +48,7 @@ export const DataProvider = ({ children }) => {
     }, [])
 
     const addCart = (id) => {
-        toast.success('Thêm thành công!');
+
         const check = cart.every(item => {
             return item.id !== id;
         })
@@ -60,6 +60,7 @@ export const DataProvider = ({ children }) => {
         } else {
             increase(id)
         }
+        toast.success('Thêm thành công!');
     }
 
     const reduction = id => {
@@ -90,19 +91,19 @@ export const DataProvider = ({ children }) => {
     }
 
     const removeProduct = id => {
-        if (window.confirm('Are you sure you want to remove Product?')) {
-            cart.forEach((item, index) => {
-                if (item.id === id) {
-                    cart.splice(index, 1);
-                }
-            })
-            setCart(cart)
-            getTotal()
-            if (cart.length === 0) {
-                window.location.reload();
-                CartEmpty()
+
+        cart.forEach((item, index) => {
+            if (item.id === id) {
+                cart.splice(index, 1);
             }
+        })
+        setCart(cart)
+        getTotal()
+        if (cart.length === 0) {
+            window.location.reload();
+            CartEmpty()
         }
+
 
     }
 

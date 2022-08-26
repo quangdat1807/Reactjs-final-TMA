@@ -113,31 +113,7 @@ function useLocationForm(shouldFetchInitialLocation) {
         setState({ ...state, selectedWard: option });
     }
 
-    function onSubmit(data) {
-    //     console.log(data)
-    //     var config = {
-    //         method: "post",
-    //         url: "http://localhost:8080/checkout",
-    //         data: data
-    //     };
-    //     axios(config)
-    //         .then(function (response) {
-    //             console.log(response);
-                
-    //             // window.location.assign('http://localhost:3000/admin/products/1');
-    //             if (response.data == "Thành Công") {
-                    
-    //             }
-
-
-    //         })
-    //         .catch(function (error) {
-    //             console.log(error);
-    //         });
-    //     // window.location.reload();
-    }
-
-    return { state, onCitySelect, onDistrictSelect, onWardSelect, onSubmit };
+    return { state, onCitySelect, onDistrictSelect, onWardSelect };
 }
 
 export default useLocationForm;

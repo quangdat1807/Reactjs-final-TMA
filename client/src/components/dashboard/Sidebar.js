@@ -47,13 +47,13 @@ function Sidebar({ color, image }) {
             </NavLink>
           </li>
           <li>
-            <NavLink className="nav-link" to={"/admin/user"}>
-              <p>User Profile</p>
+            <NavLink className="nav-link" to={"/admin/listcheckout"}>
+              <p>Đơn hàng</p>
             </NavLink>
           </li>
           <li>
-            <NavLink className="nav-link" to={"/admin/table"}>
-              <p>Table</p>
+            <NavLink className="nav-link" to={"/admin/user"}>
+              <p>User Profile</p>
             </NavLink>
           </li>
           <li>

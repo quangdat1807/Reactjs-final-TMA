@@ -32,7 +32,7 @@ function Index() {
                                 <div className="items">
                                     <Link to={'/detailPro/' + data.id} >
                                         <p><img src={data.image} className="App-logo" alt="logo" /></p>
-                                        <h5>{data.name}</h5>
+                                        <h6>{data.name}</h6>
                                         <CurrencyFormat value={data.price} displayType={'text'} thousandSeparator={true} suffix={' ₫'} renderText={value =>
                                             <p>{value}</p>} />
                                     </Link>
